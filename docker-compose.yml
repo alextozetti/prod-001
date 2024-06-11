@@ -10,8 +10,8 @@ services:
       - POSTGRES_PASSWORD=admin
   
   spring-app:
-    image: backend-prod:latest
-    #image: alextozetti/backend-prod:latest
+    #image: backend-prod:latest
+    image: alextozetti/backend-prod:latest
     ports: 
       - "8080:8080"
     environment:
@@ -20,9 +20,10 @@ services:
       - postgres-db
   
   spa-app:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: alextozetti/frontend-prod:latest
+#    build:
+#      context: ./frontend
+#      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:

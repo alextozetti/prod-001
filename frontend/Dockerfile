@@ -15,5 +15,11 @@ COPY . .
 # Buildar o projeto
 RUN npm run build
 
+# Instalar o servidor de arquivos estáticos
+RUN npm install -g serve
+
 # Comando para rodar a aplicação
-CMD ["npm", "run", "start"]
+CMD ["serve", "-s", "out", "-l", "3000"]
+
+# Comando para rodar a aplicação
+#CMD ["npm", "run", "start"]
