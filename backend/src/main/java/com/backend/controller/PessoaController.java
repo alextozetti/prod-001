@@ -39,5 +39,10 @@ public class PessoaController {
     public String getMethodName() {
         return "Meu primeiro Deploy";
     }
+
+    @GetMapping("/real")
+    public String getMethodName2() {
+        return "Feito o deploy CI/CD";
+    }
     
 }
